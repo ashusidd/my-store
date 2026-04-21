@@ -4,9 +4,9 @@ function App() {
   const [products, SetProducts] = useState(() => {
     const localData = localStorage.getItem("productsList");
     return localData ? JSON.parse(localData) : [
-      { id: 1, name: "Pen", price: 20, img: "/images/pen.jpg" },
-      { id: 2, name: "Eraser", price: 10, img: "/images/eraser.jpg" },
-      { id: 3, name: "Sharpener", price: 10, img: "/images/sharpener.jpg" }
+      { id: 1, name: "Pen", price: 20, img: "images/pen.jpg" },
+      { id: 2, name: "Eraser", price: 10, img: "images/eraser.jpg" },
+      { id: 3, name: "Sharpener", price: 10, img: "images/sharpener.jpg" }
     ];
   });
   useEffect(() => {
