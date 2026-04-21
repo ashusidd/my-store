@@ -3,7 +3,11 @@ import React, { useState, useEffect } from 'react'
 function App() {
   const [products, SetProducts] = useState(() => {
     const localData = localStorage.getItem("productsList");
-    return localData ? JSON.parse(localData) : [{ id: 1, name: "Pen", price: 20 }];
+    return localData ? JSON.parse(localData) : [
+      { id: 1, name: "Pen", price: 20, img: "\images\pen.jpg" },
+      { id: 2, name: "Eraser", price: 10, img: "\images\eraser.jpg" },
+      { id: 3, name: "Sharpener", price: 10, img: "\images\sharpener.jpg" }
+    ];
   });
   useEffect(() => {
     localStorage.setItem("productsList", JSON.stringify(products));
@@ -34,12 +38,12 @@ function App() {
           <input className="w-full border-2 border-slate-100 p-3 rounded-xl outline-none focus:border-blue-400 transition-all placeholder:text-slate-400"
             type='text'
             value={nameInput}
-            placeholder='name'
+            placeholder='Product Name'
             onChange={(e) => SetNameInput(e.target.value)} />
           <input className="w-full border-2 border-slate-100 p-3 rounded-xl outline-none focus:border-blue-400 transition-all placeholder:text-slate-400"
             type='number'
             value={priceInput}
-            placeholder='price'
+            placeholder='Price'
             onChange={(e) => SetPriceInput(e.target.value)} />
           <input className="w-full border-2 border-slate-100 p-3 rounded-xl outline-none focus:border-blue-400 transition-all placeholder:text-slate-400"
             type="file"
